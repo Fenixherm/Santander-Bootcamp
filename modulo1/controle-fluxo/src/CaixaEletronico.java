@@ -16,12 +16,18 @@ public class CaixaEletronico {
             fluxoDesejado = ler.nextInt();
         } while (fluxoDesejado < 1 || fluxoDesejado > 2);
 
-        if (fluxoDesejado == 1) {
-            novoUsuario.saldo = sacar(novoUsuario.saldo);
-        } else
-            novoUsuario.saldo = depositar(novoUsuario.saldo);
+        switch(fluxoDesejado) {
+            case 1: {
+                novoUsuario.saldo = sacar(novoUsuario.saldo);
+                break;
+            }
+            case 2: {
+                novoUsuario.saldo = depositar(novoUsuario.saldo);
+                break;
+            }
+        }
 
-        System.out.println("Saldo atual é de: " + novoUsuario.saldo);
+        System.out.println("O seu saldo atual é de: R$" + novoUsuario.saldo);
     }
 
     public static double sacar(double saldo) {
@@ -35,7 +41,7 @@ public class CaixaEletronico {
             System.out.println("Não foi possível realizar o Saque");
             return saldo;
         } else
-            System.out.println("Você sacou: " + valorDesejado);
+            System.out.println("Você sacou: R$" + valorDesejado);
         return saldo - valorDesejado;
     }
 
@@ -45,7 +51,7 @@ public class CaixaEletronico {
 
         System.out.println("Você tem disponível: R$" + saldo + " de saldo em sua conta !");
 
-        System.out.println("Digite o valor que você deseja depositar: ");
+        System.out.print("Digite o valor que você deseja depositar: R$");
         valorDesejado = ler.nextDouble();
 
         return saldo + valorDesejado;

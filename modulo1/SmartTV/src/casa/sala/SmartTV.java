@@ -1,3 +1,4 @@
+package casa.sala;
 import java.util.Scanner;
 
 //unica coisa que mudou aqui, não é criado uma classe main, e sim uma classe SmartTV e a partir dela a gente define os atributos e os métodos existentes nela, conseguindo definir ela como um objeto dentro de outra classe, podendo ter acesso aos métodos da mesma.

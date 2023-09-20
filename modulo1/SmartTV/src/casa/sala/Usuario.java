@@ -1,3 +1,4 @@
+package casa.sala;
 public class Usuario {
     public static void main(String[] args) throws Exception {
         SmartTV smartTV = new SmartTV(); //instanciando um objeto SmartTV
