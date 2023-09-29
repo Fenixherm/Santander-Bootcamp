@@ -1,4 +1,6 @@
-public class MSNMessenger {
+package servicos;
+
+public class ServicoMensagemInstantanea {
 	public void enviarMensagem(String mensagem){	
 		validarConexaoInternet();
 		System.out.println("Enviando mensagem: " + mensagem);
