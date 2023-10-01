@@ -13,11 +13,7 @@ public class MSNMessenger extends ServicoMensagemInstantanea{
 		System.out.println("Mensagem recebida pelo MSN: " + mensagem);
 		salvarHistoricoMensagem(mensagem);
 	}
-	
-	private void validarConexaoInternet(){
-		System.out.println("Verificando conexão");
-	}
-	
+		
 	private void salvarHistoricoMensagem(String mensagem){
 		System.out.println("Sua mensagem foi salva!");
 	}

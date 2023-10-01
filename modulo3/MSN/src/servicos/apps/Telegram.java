@@ -5,6 +5,7 @@ import servicos.ServicoMensagemInstantanea;
 public class Telegram extends ServicoMensagemInstantanea{
 
 	public void enviarMensagem(String mensagem){	
+		validarConexaoInternet();
 		criptografarMensagem(mensagem);
 		System.out.println("Enviando mensagem pelo Telegram: " + mensagem);
 	}
