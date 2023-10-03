@@ -1,4 +1,4 @@
-package compras;
+package lista.compras;
 
 import java.util.ArrayList;
 

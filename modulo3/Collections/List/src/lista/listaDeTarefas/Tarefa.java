@@ -1,4 +1,4 @@
-package listaDeTarefas;
+package lista.listaDeTarefas;
 
 public class Tarefa {
 	//Atributo
