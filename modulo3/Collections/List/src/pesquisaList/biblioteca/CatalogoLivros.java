@@ -17,7 +17,7 @@ public class CatalogoLivros {
 		
 		//System.out.println(catalogo.pesquisarPorAutor("Jonas"));
 		//System.out.println(catalogo.pesquisarPorIntervaloAnos(1998, 2003));
-		System.out.println(catalogo.pesquisarPorTitulo("Sempre de Férias 1"));
+		System.out.println(catalogo.pesquisarPorTitulo("Sempre de Férias"));
 	}
 	
 	
@@ -61,11 +61,28 @@ public class CatalogoLivros {
 	public String pesquisarPorTitulo(String titulo){
 		if(!catalogoLivros.isEmpty()) {
 			for(Livro l : catalogoLivros) {
+				
 				if(l.getTitulo().equalsIgnoreCase(titulo)) {
 					return l.getTitulo().toString();
 				}
 			}
 		}
-		return "Não possuí este livro no catalogo";
+		return "";
 	}
+	
+	/* 
+	 * Retorna todos os livros que possuem parte do titulo
+	public List<Livro> pesquisarPorTitulo(String titulo){
+		List<Livro> livrosPorTitulo = new ArrayList<>();
+		
+		if(!catalogoLivros.isEmpty()) {
+			for(Livro l : catalogoLivros) {
+				if(l.getTitulo().contains(titulo)){
+					livrosPorTitulo.add(l);
+				}
+			}
+			return livrosPorTitulo;
+		}
+		return livrosPorTitulo;
+	}*/
 }
