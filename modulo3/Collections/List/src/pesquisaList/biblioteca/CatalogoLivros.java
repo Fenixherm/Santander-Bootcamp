@@ -17,7 +17,9 @@ public class CatalogoLivros {
 		
 		//System.out.println(catalogo.pesquisarPorAutor("Jonas"));
 		//System.out.println(catalogo.pesquisarPorIntervaloAnos(1998, 2003));
-		System.out.println(catalogo.pesquisarPorTitulo("Sempre de Férias"));
+		
+		System.out.println(catalogo.pesquisarPorTitulo("sempre de Férias"));
+
 	}
 	
 	
@@ -58,16 +60,18 @@ public class CatalogoLivros {
 		return livrosIntervaloAnos;
 	}
 	
-	public String pesquisarPorTitulo(String titulo){
+	public Livro pesquisarPorTitulo(String titulo){
+		Livro livroPorTitulo = null;
 		if(!catalogoLivros.isEmpty()) {
 			for(Livro l : catalogoLivros) {
 				
 				if(l.getTitulo().equalsIgnoreCase(titulo)) {
-					return l.getTitulo().toString();
+					livroPorTitulo = l;
+					break;
 				}
 			}
 		}
-		return "";
+		return livroPorTitulo; //Tratar exceção pois pode retornar nulo.
 	}
 	
 	/* 
