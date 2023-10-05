@@ -31,14 +31,31 @@ public class OrdenacaoNumeros implements Comparable<Integer> {
 	
 	List<Integer> ordenarAscendente() {
 		List<Integer> lista = new ArrayList<>(listaNumeros);
-		Collections.sort(lista);
-		return lista;
+		if(!lista.isEmpty()) {
+			Collections.sort(lista);
+			return lista;
+		}else {
+			throw new RuntimeException("A lista está vazia!");
+		}
 	}
 	
 	List<Integer> ordenarDescendente() {
 		List<Integer> lista = new ArrayList<>(listaNumeros);
-		Collections.sort(lista, new ComparatorDescendente());
-		return lista;
+		
+		if(!lista.isEmpty()) {
+			Collections.sort(lista, new ComparatorDescendente());
+			return lista;
+		}else {
+			throw new RuntimeException("A lista está vazia!");
+		}
+	}
+	
+	public void exibirNumeros() {
+		if(!this.listaNumeros.isEmpty()) {
+			System.out.println(this.listaNumeros);
+		}else {
+			throw new RuntimeException("A lista está vazia!");
+		}
 	}
 	
 	public int compareTo(Integer inteiro) {

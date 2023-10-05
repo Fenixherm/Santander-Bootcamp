@@ -3,7 +3,6 @@ package pesquisaList.biblioteca;
 import java.util.ArrayList;
 import java.util.List;
 
-import lista.compras.Item;
 
 public class CatalogoLivros {
 	
@@ -17,9 +16,11 @@ public class CatalogoLivros {
 		
 		//System.out.println(catalogo.pesquisarPorAutor("Jonas"));
 		//System.out.println(catalogo.pesquisarPorIntervaloAnos(1998, 2003));
-		
-		System.out.println(catalogo.pesquisarPorTitulo("sempre de Férias"));
-
+		try {
+			System.out.println(catalogo.pesquisarPorTitulo("sempre de Férias"));
+		}catch(ExceptionNulo e) {
+			System.out.println("Livro não encontrado !");
+		}
 	}
 	
 	
@@ -43,9 +44,10 @@ public class CatalogoLivros {
 					livrosPorAutor.add(l);
 				}
 			}
-			return livrosPorAutor; // caso não esteja retorna a lista de livros
-		}// caso esteja, retorna uma lista vazia.
-		return livrosPorAutor;
+			return livrosPorAutor;
+		}else
+			throw new RuntimeException("A lista está vazia");
+		
 	}
 	
 	public List<Livro> pesquisarPorIntervaloAnos(int anoInicial, int anoFinal){
@@ -56,11 +58,12 @@ public class CatalogoLivros {
 					livrosIntervaloAnos.add(l);
 				}
 			}
-		}
-		return livrosIntervaloAnos;
+			return livrosIntervaloAnos;
+		}else
+			throw new RuntimeException("A lista está vazia");
 	}
 	
-	public Livro pesquisarPorTitulo(String titulo){
+	public Livro pesquisarPorTitulo(String titulo) throws ExceptionNulo{
 		Livro livroPorTitulo = null;
 		if(!catalogoLivros.isEmpty()) {
 			for(Livro l : catalogoLivros) {
@@ -70,8 +73,12 @@ public class CatalogoLivros {
 					break;
 				}
 			}
-		}
-		return livroPorTitulo; //Tratar exceção pois pode retornar nulo.
+			if(livroPorTitulo == null) {
+				throw new ExceptionNulo();
+			}else
+				return livroPorTitulo;
+		}else
+			throw new RuntimeException("A lista está vazia");
 	}
 	
 	/* 
