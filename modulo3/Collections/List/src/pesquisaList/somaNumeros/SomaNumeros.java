@@ -8,12 +8,14 @@ public class SomaNumeros {
 	public static void main(String[] args) {
 		SomaNumeros soma = new SomaNumeros();
 		
-		soma.adicionarNumero(50);
-		soma.adicionarNumero(51);
-		soma.adicionarNumero(52);
-		soma.adicionarNumero(53);
+		soma.adicionarNumero(-50);
+		soma.adicionarNumero(-51);
+		soma.adicionarNumero(-52);
+		soma.adicionarNumero(-53);
 		
 		System.out.println(soma.exibirNumeros());
+		System.out.println(soma.encontrarMaiorNumero());
+		System.out.println(soma.encontrarMenorNumero());
 	}
 	
 
@@ -36,15 +38,24 @@ public class SomaNumeros {
 		return resultado;
 	}
 	
-	void encontrarMaiorNumero() {
-		
+	int encontrarMaiorNumero() {
+		int maiorNumero = listaDeNumeros.get(0);
 		for(int i : listaDeNumeros) {
-			
+			if(maiorNumero < i) {
+				maiorNumero = i;
+			}
 		}
+		return maiorNumero;
 	}
 	
-	void encontrarMenorNumero() {
-		
+	int encontrarMenorNumero() {
+		int menorNumero = listaDeNumeros.get(0);
+		for(int i : listaDeNumeros) {
+			if(menorNumero > i) {
+				menorNumero = i;
+			}
+		}
+		return menorNumero;
 	}
 	
 	List<Integer> exibirNumeros() {
