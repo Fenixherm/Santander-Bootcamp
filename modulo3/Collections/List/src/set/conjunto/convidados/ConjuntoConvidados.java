@@ -41,15 +41,20 @@ public class ConjuntoConvidados {
 		listaConvidadosSet.adicionarConvidado("Joaozinho", 001);
 		listaConvidadosSet.adicionarConvidado("Joaozinho", 002);
 		listaConvidadosSet.adicionarConvidado("Lusca", 003);
+		System.out.println(listaConvidadosSet.contarConvidados());
+		
 		listaConvidadosSet.adicionarConvidado("Mané", 004);
 		listaConvidadosSet.adicionarConvidado("masterReset", 005);
+		listaConvidadosSet.adicionarConvidado("Joninhas", 005);
 		listaConvidadosSet.adicionarConvidado("RAtimBum!", 006);
+		
+		System.out.println(listaConvidadosSet.contarConvidados());
 		
 		listaConvidadosSet.removerConvidadoPorCodigoConvite(002);
 		
-		listaConvidadosSet.contarConvidados();
-		
 		listaConvidadosSet.exibirConvidados();
+		
+		System.out.println(listaConvidadosSet.contarConvidados());
 	}
 	
 }

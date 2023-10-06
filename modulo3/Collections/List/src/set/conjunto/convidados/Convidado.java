@@ -1,5 +1,7 @@
 package set.conjunto.convidados;
 
+import java.util.Objects;
+
 public class Convidado {
 	
 	private String nome;
@@ -9,6 +11,25 @@ public class Convidado {
 		this.nome = nome;
 		this.codigoConvite = codigoConvite;
 	}
+	
+	//opçao generate hashCode and equals
+	public int hashCode() {
+		return Objects.hash(codigoConvite);
+	}
+
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Convidado other = (Convidado) obj;
+		return codigoConvite == other.codigoConvite;
+	}
+
+
+
 
 	public String getNome() {
 		return nome;

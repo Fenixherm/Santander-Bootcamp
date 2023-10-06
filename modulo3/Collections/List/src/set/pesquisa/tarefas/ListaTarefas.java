@@ -41,6 +41,7 @@ public class ListaTarefas {
 			for(Tarefa t: tarefas) {
 				if(t.getDescricao().equalsIgnoreCase(descricao)) {
 					tarefas.remove(t);
+					break;
 				}
 			}
 		}else
