@@ -1,4 +1,4 @@
-package set.conjunto;
+package set.conjunto.convidados;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -35,4 +35,22 @@ public class ConjuntoConvidados {
 		System.out.println(convidadoSet);
 	}
 	
+	public static void main(String[] args) {
+		ConjuntoConvidados listaConvidadosSet = new ConjuntoConvidados();
+		
+		listaConvidadosSet.adicionarConvidado("Joaozinho", 001);
+		listaConvidadosSet.adicionarConvidado("Joaozinho", 002);
+		listaConvidadosSet.adicionarConvidado("Lusca", 003);
+		listaConvidadosSet.adicionarConvidado("Mané", 004);
+		listaConvidadosSet.adicionarConvidado("masterReset", 005);
+		listaConvidadosSet.adicionarConvidado("RAtimBum!", 006);
+		
+		listaConvidadosSet.removerConvidadoPorCodigoConvite(002);
+		
+		listaConvidadosSet.contarConvidados();
+		
+		listaConvidadosSet.exibirConvidados();
+	}
+	
 }
+

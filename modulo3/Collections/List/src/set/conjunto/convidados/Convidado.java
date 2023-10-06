@@ -1,4 +1,4 @@
-package set.conjunto;
+package set.conjunto.convidados;
 
 public class Convidado {
 	
