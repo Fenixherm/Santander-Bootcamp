@@ -17,7 +17,7 @@ public class CatalogoLivros {
 		//System.out.println(catalogo.pesquisarPorAutor("Jonas"));
 		//System.out.println(catalogo.pesquisarPorIntervaloAnos(1998, 2003));
 		try {
-			System.out.println(catalogo.pesquisarPorTitulo("sempre de Férias"));
+			System.out.println(catalogo.pesquisarPorTitulo("Sempre de Férias"));
 		}catch(ExceptionNulo e) {
 			System.out.println("Livro não encontrado !");
 		}
@@ -34,7 +34,7 @@ public class CatalogoLivros {
 		catalogoLivros.add(new Livro(titulo, autor, anoPublicacao));
 	}
 	
-	public List<Livro> pesquisarPorAutor(String autor) {
+	public List<Livro> pesquisarPorAutor(String autor) throws ExceptionNulo{
 		List<Livro> livrosPorAutor = new ArrayList<>();
 		
 		//verifica se a lista não está vazia
@@ -43,57 +43,42 @@ public class CatalogoLivros {
 				if(l.getAutor().equalsIgnoreCase(autor)) {
 					livrosPorAutor.add(l);
 				}
-			}
-			return livrosPorAutor;
+			}if(!livrosPorAutor.isEmpty())
+				return livrosPorAutor;
+			else
+				throw new ExceptionNulo();
 		}else
-			throw new RuntimeException("A lista está vazia");
+			throw new ExceptionNulo();
 		
 	}
 	
-	public List<Livro> pesquisarPorIntervaloAnos(int anoInicial, int anoFinal){
+	public List<Livro> pesquisarPorIntervaloAnos(int anoInicial, int anoFinal) throws ExceptionNulo{
 		List<Livro> livrosIntervaloAnos = new ArrayList<>();
 		if(!catalogoLivros.isEmpty()) {
 			for(Livro l : catalogoLivros) {
 				if(l.getAnoPublicacao() >= anoInicial & l.getAnoPublicacao() <= anoFinal) {
 					livrosIntervaloAnos.add(l);
 				}
-			}
-			return livrosIntervaloAnos;
-		}else
-			throw new RuntimeException("A lista está vazia");
-	}
-	
-	public Livro pesquisarPorTitulo(String titulo) throws ExceptionNulo{
-		Livro livroPorTitulo = null;
-		if(!catalogoLivros.isEmpty()) {
-			for(Livro l : catalogoLivros) {
-				
-				if(l.getTitulo().equalsIgnoreCase(titulo)) {
-					livroPorTitulo = l;
-					break;
-				}
-			}
-			if(livroPorTitulo == null) {
+			}if(!livrosIntervaloAnos.isEmpty())
+				return livrosIntervaloAnos;
+			else
 				throw new ExceptionNulo();
-			}else
-				return livroPorTitulo;
 		}else
-			throw new RuntimeException("A lista está vazia");
+			throw new ExceptionNulo();
 	}
 	
-	/* 
-	 * Retorna todos os livros que possuem parte do titulo
-	public List<Livro> pesquisarPorTitulo(String titulo){
+	public List<Livro> pesquisarPorTitulo(String titulo) throws ExceptionNulo {
 		List<Livro> livrosPorTitulo = new ArrayList<>();
-		
 		if(!catalogoLivros.isEmpty()) {
 			for(Livro l : catalogoLivros) {
-				if(l.getTitulo().contains(titulo)){
+				if(l.getTitulo().startsWith(titulo) || l.getTitulo().equalsIgnoreCase(titulo)){
 					livrosPorTitulo.add(l);
 				}
-			}
-			return livrosPorTitulo;
-		}
-		return livrosPorTitulo;
-	}*/
+			}if(!livrosPorTitulo.isEmpty())
+				return livrosPorTitulo;
+			else
+				throw new ExceptionNulo();
+		}else
+			throw new ExceptionNulo();
+	}
 }

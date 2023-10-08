@@ -3,6 +3,8 @@ package set.pesquisa.agenda;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.management.RuntimeErrorException;
+
 public class AgendaContatos {
 	public static void main(String[] args) {
 		AgendaContatos contatos = new AgendaContatos();
@@ -10,10 +12,11 @@ public class AgendaContatos {
 		contatos.adicionarContato("Jrizk", 15159595);
 		contatos.adicionarContato("Frontiendi", 1515150);
 		contatos.adicionarContato("Doninha", 1599865);
+		contatos.adicionarContato("Doninha", 1599864);
 		
 		contatos.exibirContatos();
 		System.out.println(contatos.pesquisarPorNome("Jrizk"));
-		contatos.atualizarNumeroContato("Jrizka", 14149494);
+		contatos.atualizarNumeroContato("Jrizk", 141494954);
 		System.out.println(contatos.pesquisarPorNome("Jrizk"));
 		
 	}
@@ -35,27 +38,43 @@ public class AgendaContatos {
 	}
 	
 	Set<Contato> pesquisarPorNome(String nome) {
-		Set<Contato> contato = new HashSet<>();
+		Set<Contato> contatoPorNome = new HashSet<>();
 		if(!agenda.isEmpty()) {
 			for(Contato c: agenda) {
-				if(c.getNome().equalsIgnoreCase(nome)) {
-					contato.add(c);
+				if(c.getNome().startsWith(nome)) {
+					contatoPorNome.add(c);
 				}
 			}
-			return contato;
+			return contatoPorNome;
 		}else
-			return contato; //lançar throw exception
+			return contatoPorNome; //lançar throw exception
 	}
 	
+	//forma 1
 	void atualizarNumeroContato(String nome, int novoNumero) {
 		if(!agenda.isEmpty()) {
 			for(Contato c: agenda) {
 				if(c.getNome().equalsIgnoreCase(nome)) {
 					c.setNumeroTelefone(novoNumero);
-				}else
-					System.out.println("Nome não encontrado");
+				}
 			}
 		}else
-			System.out.println("nome não encontrado");
+			System.out.println("nome não encontrado"); //lançar throw exception
 	}
+	
+	//forma 2
+	/*
+	public Contato atualizarNumeroContato(String nome, int novoNumero) {
+		Contato contatoAtualizado = null;
+		if(!agenda.isEmpty()) {
+			for(Contato c: agenda) {
+				if(c.getNome().equalsIgnoreCase(nome)) {
+					c.setNumeroTelefone(novoNumero);
+					contatoAtualizado = c;
+					return contatoAtualizado;
+				}
+			}
+		}
+		return contatoAtualizado;
+	}*/
 }
