@@ -30,7 +30,7 @@ public class Produto implements Comparable<Produto>{
 	}
 	
 	public int compareTo(Produto p) {
-		return nome.compareToIgnoreCase(p.getNome());
+		return nome.compareToIgnoreCase(p.getNome()); //ordem feito por nome
 	}
 	
 	@Override
