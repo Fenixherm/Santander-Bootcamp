@@ -16,6 +16,11 @@ public class Evento {
 	public String getNomeAtracao() {
 		return nomeAtracao;
 	}
+
+	@Override
+	public String toString() {
+		return "Evento [nomeEvento=" + nomeEvento + ", nomeAtracao=" + nomeAtracao + "]";
+	}
 	
 	
 }
