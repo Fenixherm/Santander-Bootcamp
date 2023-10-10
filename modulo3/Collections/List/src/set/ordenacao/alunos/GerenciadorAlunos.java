@@ -41,12 +41,16 @@ public class GerenciadorAlunos {
 					
 				}
 			}
-		}
+		}else
+			System.out.println("A lista de alunos está vazia !");
 	}
 	
 	void exibirAlunosPorNome() {
-		Set<Aluno> alunosPorNome = new TreeSet<>(listaAlunos);
-		System.out.println(alunosPorNome.toString());
+		if(!listaAlunos.isEmpty()) {
+			Set<Aluno> alunosPorNome = new TreeSet<>(listaAlunos);
+			System.out.println(alunosPorNome.toString());
+		}else
+			System.out.println("A lista de alunos está vazia !");
 	}
 	
 	Set<Aluno> exibirAlunosPorNota() {
