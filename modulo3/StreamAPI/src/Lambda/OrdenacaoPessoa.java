@@ -16,14 +16,12 @@ public class OrdenacaoPessoa {
     }
 
     public List<Pessoa> ordenarPorIdade(){
-        List<Pessoa> ordenarPorIdade = new ArrayList<>(this.pessoaList);
+        List<Pessoa> pessoasPorIdade = new ArrayList<>(this.pessoaList);
+
         if(!pessoaList.isEmpty()){
-
-            System.out.println("Estou na TV mae");
-            ordenarPorIdade.sort((Pessoa p1, Pessoa p2) -> Integer.compare(p1.getIdade(), p2.getIdade()));
-
+            pessoaList.sort(Comparator.comparingInt(Pessoa::getIdade));
         }
-        return ordenarPorIdade;
+        return pessoasPorIdade;
     }
 
     void imprimirListaPessoas(){
