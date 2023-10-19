@@ -2,7 +2,8 @@ package dio.aula.model;
 
 import jakarta.persistence.*;
 
-@Entity(name = "tb_users")
+@Entity
+@Table(name = "tab_user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
