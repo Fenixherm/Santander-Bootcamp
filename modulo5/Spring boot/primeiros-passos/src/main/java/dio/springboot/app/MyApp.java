@@ -1,4 +1,4 @@
-package dio.springboot;
+package dio.springboot.app;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -11,6 +11,6 @@ public class MyApp implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("resultado é: " + calculadora.somar(5,5));
+        //System.out.println("resultado é: " + calculadora.somar(5,5));
     }
 }
