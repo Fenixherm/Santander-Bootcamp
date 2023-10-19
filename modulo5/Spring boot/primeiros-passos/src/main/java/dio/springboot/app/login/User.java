@@ -1,6 +1,10 @@
 package dio.springboot.app.login;
 
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
+@ConfigurationProperties(prefix = "user")
 public class User {
 
     private String username;

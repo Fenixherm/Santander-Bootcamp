@@ -1,12 +1,14 @@
 package dio.springboot.app.login;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.Objects;
 
 @Component
 public class UserSystem {
+
     @Autowired
     private User newUser;
     @Autowired
