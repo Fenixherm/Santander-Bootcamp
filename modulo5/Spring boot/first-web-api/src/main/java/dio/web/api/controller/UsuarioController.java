@@ -28,4 +28,10 @@ public class UsuarioController {
     public void postUser(@RequestBody Usuario usuario){
         userRepository.save(usuario);
     }
+    @PutMapping()
+    public void putUser(@RequestBody Usuario usuario){
+        userRepository.save(usuario);
+    }
+
+
 }
