@@ -55,3 +55,9 @@ modulo5\'Spring boot'\aula-spring-data-jpa\.idea
 modulo5\'Spring boot'\aula-spring-data-jpa\target
 modulo5\'Spring boot'\aula-spring-data-jpa\.gitignore
 modulo5\'Spring boot'\aula-spring-data-jpa\.mvn
+modulo5\'Spring boot'\first-web-api\.mvn
+modulo5\'Spring boot'\first-web-api\.gitignore
+modulo5\'Spring boot'\first-web-api\mvnw
+modulo5\'Spring boot'\first-web-api\mvnw.cmd
+modulo5\'Spring boot'\first-web-api\target
+modulo5\'Spring boot'\first-web-api\.idea
