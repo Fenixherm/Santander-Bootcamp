@@ -2,11 +2,12 @@ package dio.web.api.controller;
 
 import dio.web.api.Model.Usuario;
 import dio.web.api.Repository.UserRepository;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@Tag(name = "Usuario", description = "Usuario management APIs")
 @RestController
 @RequestMapping("/users")
 public class UsuarioController {

@@ -48,16 +48,16 @@ modulo3/StreamAPI/.idea
 modulo3/StreamAPI/out
 modulo5/JUnit-Maven/.idea
 modulo5/JUnit-Maven/target
-modulo5\'Spring boot'\primeiros-passos\.idea
-modulo5\'Spring boot'\primeiros-passos\target
-modulo5\'Spring boot'\primeiros-passos\.gitignore
-modulo5\'Spring boot'\aula-spring-data-jpa\.idea
-modulo5\'Spring boot'\aula-spring-data-jpa\target
-modulo5\'Spring boot'\aula-spring-data-jpa\.gitignore
-modulo5\'Spring boot'\aula-spring-data-jpa\.mvn
-modulo5\'Spring boot'\first-web-api\.mvn
-modulo5\'Spring boot'\first-web-api\.gitignore
-modulo5\'Spring boot'\first-web-api\mvnw
-modulo5\'Spring boot'\first-web-api\mvnw.cmd
-modulo5\'Spring boot'\first-web-api\target
-modulo5\'Spring boot'\first-web-api\.idea
+modulo5/'Spring boot'/primeiros-passos/.idea
+modulo5/'Spring boot'/primeiros-passos/target
+modulo5/'Spring boot'/primeiros-passos/.gitignore
+modulo5/'Spring boot'/aula-spring-data-jpa/.idea
+modulo5/'Spring boot'/aula-spring-data-jpa/target
+modulo5/'Spring boot'/aula-spring-data-jpa/.gitignore
+modulo5/'Spring boot'/aula-spring-data-jpa/.mvn
+modulo5/'Spring boot'/first-web-api/.mvn
+modulo5/'Spring boot'/first-web-api/mvnw
+modulo5/'Spring boot'/first-web-api/mvnw.cmd
+modulo5/'Spring boot'/first-web-api/target
+modulo5/'Spring boot'/first-web-api/.idea
+modulo5/'Spring boot'/dio-spring-security/.idea
